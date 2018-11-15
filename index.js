@@ -1,10 +1,30 @@
 javascript
 
-
 function takeANumber(katsDeliLine, name){
 katsDeliLine.push(name);
 return `Welcome, ${name}. You are number ${katsDeliLine.indexOf(name)+1} in line.`;
 }
+
+
+var currentNumber = 0;
+
+function takeANumber(katsDeliLine){
+  resetNumber()
+  currentNumber ++;
+  katsDeliLine.push(currentNumber);
+  return currentNumber;
+}
+
+function resetNumber(){
+  if (currentNumber == 1000){
+    currentNumber = 0
+  }
+}
+
+
+
+
+
 
 function nowServing(katsDeliLine){
 if(katsDeliLine.length !== 0){
